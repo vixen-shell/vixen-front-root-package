@@ -1,7 +1,7 @@
 import { jsx as c } from "react/jsx-runtime";
 import m from "react";
 import y from "react-dom";
-import R from "vixen-front-ui";
+import R from "@vixen-front/ui";
 var a = {}, n = y;
 if (process.env.NODE_ENV === "production")
   a.createRoot = n.createRoot, a.hydrateRoot = n.hydrateRoot;
