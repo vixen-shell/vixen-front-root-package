@@ -1,7 +1,7 @@
 import { jsx as c } from "react/jsx-runtime";
 import m from "react";
 import y from "react-dom";
-import R from "@vixen-front/ui";
+import { ErrorFrame as R } from "@vixen-front/ui";
 var a = {}, n = y;
 if (process.env.NODE_ENV === "production")
   a.createRoot = n.createRoot, a.hydrateRoot = n.hydrateRoot;
@@ -33,7 +33,7 @@ function _(r) {
       return (await t(e)).default;
     } catch (s) {
       return console.error(s), /* @__PURE__ */ c(
-        R.ErrorFrame,
+        R,
         {
           message: e ? `Feature '${e}' not found !` : "Missing feature parameter !"
         }
