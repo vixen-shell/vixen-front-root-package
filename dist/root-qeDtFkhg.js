@@ -23,44 +23,46 @@ else {
     }
   };
 }
-function _(r) {
+function d(r) {
   function o() {
     return new URLSearchParams(window.location.search).get("feature");
   }
-  async function c(e) {
-    const t = o();
+  async function c(t) {
+    const e = o();
     try {
-      const i = (await e(t)).feature;
+      const i = (await t(e)).default;
       if (i)
         return i;
-      throw new Error(`'${t}' does not export feature !`);
+      throw new Error(
+        `'${e}' does not export feature as default !`
+      );
     } catch (i) {
       return console.error(i), /* @__PURE__ */ f(
         R,
         {
-          message: t ? `Feature '${t}' not found !` : "Missing feature parameter !"
+          message: e ? `Feature '${e}' not found !` : "Missing feature parameter !"
         }
       );
     }
   }
-  function l(e) {
-    const t = () => e;
+  function l(t) {
+    const e = () => t;
     a.createRoot(r).render(
-      /* @__PURE__ */ f(m.StrictMode, { children: /* @__PURE__ */ f(t, {}) })
+      /* @__PURE__ */ f(m.StrictMode, { children: /* @__PURE__ */ f(e, {}) })
     );
   }
-  function s(e) {
-    "importCallback" in e && c(e.importCallback).then((t) => {
-      l(t);
-    }), "feature" in e && l(e.feature);
+  function s(t) {
+    "importCallback" in t && c(t.importCallback).then((e) => {
+      l(e);
+    }), "feature" in t && l(t.feature);
   }
   return { render: s };
 }
 const h = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  create: _
+  create: d
 }, Symbol.toStringTag, { value: "Module" }));
 export {
   h as R,
-  _ as c
+  d as c
 };
